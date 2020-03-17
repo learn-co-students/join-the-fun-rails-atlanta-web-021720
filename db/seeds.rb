@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+t = Taxi.create()
+p = Passenger.create()
+r = Ride.create()
+r.passenger_id = p.id
+r.taxi_id = t.id
