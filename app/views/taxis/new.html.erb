@@ -1,0 +1,9 @@
+<%= form_tag taxis_path do %>
+  <label>Taxi title:</label><br>
+  <%= text_field_tag :title %><br>
+
+  <label>Taxi Description</label><br>
+  <%= text_area_tag :description %><br>
+
+  <%= submit_tag "Submit Taxi" %>
+<% end %>

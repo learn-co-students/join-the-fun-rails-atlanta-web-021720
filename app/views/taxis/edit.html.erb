@@ -1,0 +1,38 @@
+<h3>Taxi Form</h3>
+======= example 1 =========
+<%= form_for(@taxi) do |f| %>
+  <!-- puts everything within @taxi, like in rake schema table creation -->
+  <label>Taxi title:</label><br>
+  <%= f.text_field :title %><br>
+  <!-- replaces text_field_tag and the need for a , @taxi.title source -->
+
+  <label>Taxi description</label><br>
+  <%= f.text_area :description %><br>
+
+
+  <%= f.submit %>
+<% end %>
+======= example 2 =========
+<%= form_tag taxi_path(@taxi), method: "put" do %>
+  <label>Taxi title:</label>
+  <br>
+  <%= text_field_tag :title, @taxi.title %>
+  <br>
+  <label>Taxi description</label>
+  <br>
+  <%= text_area_tag :description, @taxi.description %>
+  <br>
+  <%= submit_tag "Submit Taxi" %>
+<% end %>
+======= example 3 =========
+<%= form_tag taxi_path(@taxi), method: "put" do %>
+  <label>Taxi title:</label>
+  <br>
+  <%= text_field_tag "taxi[title]", @taxi.title %>
+  <br>
+  <label>Taxi description</label>
+  <br>
+  <%= text_area_tag "taxi[description]", @taxi.description %>
+  <br>
+  <%= submit_tag "Submit Taxi" %>
+<% end %>
